@@ -1,93 +1,61 @@
-* {
-    font-family: 'Montserrat', sans-serif;
-}
 html {
     margin: 0;
     padding: 0;
 }
-body {
-    background-color: #E5E5E5;
-    padding-top: 85px;
-}
+
 h1 {
-    padding-left: 162px;
-    font-weight: bold;
-    font-size: 38px;
-    line-height: 46px;
-    color: #000000;
-    margin: 0;
-    margin-bottom: 80px;
+    width: 100%;
+    text-align: center;
 }
 
 .flex-wrapper {
-    width: 100%;
     display: flex;
-    justify-content: center;
-}
-
-.slider-wrapper {
-    max-width: 800px;
     width: 100%;
-    height: 490px;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    box-shadow: 10px 10px 44px -10px rgba(0,0,0,0.75);
 }
 
-#btn-prev, #btn-next {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 50px;
-    background-color: gray;
-    opacity: 0.4;
+#btn-open {
+    width: 150px;
+    height: 40px;
+    background-color: red;
+    color: #ffffff;
+    font-size: 22px;
+    border-radius: 20px;
     cursor: pointer;
-    transition: opacity .2s ease-in-out;
 }
 
-#btn-prev:hover, #btn-next:hover {
-    opacity: 0.6;
-}
-
-
-#btn-next {
-    left: auto;
-    right: 0;
-}
-
-.slide {
+#wrapper-modal {
     width: 100%;
     height: 100%;
     display: none;
 }
 
-.slide.active {
+#wrapper-modal.active {
     display: block;
 }
 
-img {
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    z-index: 1;
+    background-color: gray;
+    opacity: 0.5;
 }
 
-.dots-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
-}
-
-.dot.active {
-    background-color: #000000;
-}
-
-span {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background-color: gray; 
-    margin-right: 10px;
-    cursor: pointer;
-}
-span:last-child{
-    margin-right: 0;
+#modal-window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    z-index: 2;
+    border: 1px solid black;
+    background-color: #ffffff;
 }
