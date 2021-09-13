@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SLider</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>My first slider</h1>
+    <h1>Modal Window</h1>
     <div class="flex-wrapper">
-        <div class="slider-wrapper">
-            <div class="slide active">
-                <img src="img_1.jpg" alt="">
+        <button id="btn-open">Open</button>
+    </div>
+    <div id="wrapper-modal">
+        <div id="overlay">
+
+        </div>
+        <div id="modal-window">
+            <div>
+                <button id="btn-close">Close modal</button>
             </div>
-            <div class="slide">
-                <img src="img_2.jpg" alt="">
+            <div class="content">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea ex aperiam vel commodi eius fugiat laborum quo nihil a dignissimos possimus, voluptas eos maxime reprehenderit, nisi delectus perspiciatis alias optio.
             </div>
-            <div class="slide">
-                <img src="img_3.jpg" alt="">
-            </div>
-            <div id="btn-prev"></div>
-            <div id="btn-next"></div>
         </div>
     </div>
-    <div class="dots-wrapper">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-    </div>
+
     <script src="main.js"></script>
+
 </body>
+
 </html>
