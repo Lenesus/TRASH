@@ -1,51 +1,60 @@
-// The information of the hometown //
+const prev = document.getElementById('btn-prev'),
+    next = document.getElementById('btn-next'),
+    slides = document.querySelectorAll('.slide'),
+    dots = document.querySelectorAll('.dot');
 
-let str1 = "Kaliningrad";
-let str2 = 'In Russia';
-let num1 = 437560;
-let bool = true;
+let index = 0;
 
-
-// The square of rectangle //
-
-let num2 = 40;
-let num3 = 70;
-let square = num2 * num3;
-
-
-// Task //
-
-let time = 2;
-let speedOfFirst = 95;
-let speedOfSecond = 114;
-let way = (speedOfFirst + speedOfSecond) * 2;
-
-console.log(way)
-
-
-// The code task //
-
-const randomNumber = Math.floor(Math.random() * 100);
-
-if (randomNumber < 20) {
-    console.log('randomNumber1 меньше 20');
-} else if (randomNumber > 50) {
-    console.log('randomNumber1 больше 50');
-} else {
-    console.log('randomNumber1 больше 20, и меньше 50')
+const activeSlides = n => {
+    for (slide of slides) {
+        slide.classList.remove('active');
+    }
+    slides[n].classList.remove('active');
 }
 
-// Switch case //
+const activeDot = n => {
+    for (dot of dots) {
+        dot.classList.remove('active');
+    }
+    dot[n].classList.remove('active');
+}
 
-switch (true) {
-    case randomNumber < 20:
-        console.log("randomNumber2 меньше 20");
-        break;
-    case randomNumber > 50:
-        console.log("randomNumber2 больше 50");
-        break;
-    default:
-        console.log("randomNumber2 больше 20, и меньше 50");
-        break;
+
+const prepareCurrentSlide = ind => {
+    activeSlide(index);
+    activeDot(index);
+}
+
+const nextSlide = () => {
+    if (index == slides.length - 1) {
+        index = 0;
+        prepareCurrentSlide(index);
+    } else {
+
+        index++;
+        prepareCurrentSlide(index);
+
+    }
 
 }
+
+
+const prevSlide = () => {
+    if (index == 0) {
+        index = slides.length - 1;
+        prepareCurrentSlide(index);
+    } else {
+        index--;
+        prepareCurrentSlide(index);
+    }
+    dots.forEach((item, indexDot) => {
+        item.addEventListener('click', () => {
+            index == indexDot;
+        })
+        prepareCurrentSlide(index)
+    })
+
+}
+
+next.addEventListener('click', nextSlide);
+prev.addEventListener('click', prevSlide);
